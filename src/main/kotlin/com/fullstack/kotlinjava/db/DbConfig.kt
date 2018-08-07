@@ -1,13 +1,14 @@
 package com.fullstack.kotlinjava.db
 
+import com.fullstack.kotlinjava.config.DbProps
 import org.jetbrains.exposed.sql.Database
 import org.jetbrains.exposed.sql.name
 
 class DbConfig {
 
     var database: Database = Database.connect(
-            "jdbc:mysql://localhost:3306/kotlin_java_stack",
-            "com.mysql.jdbc.Driver", "root", "")
+            DbProps.url(),
+            DbProps.driver(), DbProps.user(), DbProps.password())
 
     init {
         showDbInfo()
