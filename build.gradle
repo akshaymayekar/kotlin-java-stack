@@ -11,6 +11,7 @@ sourceCompatibility = 1.8
 repositories {
     mavenCentral()
     maven { url "https://dl.bintray.com/kotlin/exposed" } // for kotlin exposed only not jcenter() here.
+    jcenter()
 }
 
 dependencies {
@@ -23,6 +24,7 @@ dependencies {
     compile group: 'mysql', name: 'mysql-connector-java', version: '8.0.11'
     compile group: 'com.zaxxer', name: 'HikariCP', version: '3.2.0'
     compile "com.fasterxml.jackson.module:jackson-module-kotlin:2.9.+"
+    compile group: 'io.github.microutils', name: 'kotlin-logging', version: '1.5.8'
 
     compile group: 'org.slf4j', name: 'slf4j-api', version: '1.7.25'
     compile group: 'org.slf4j', name: 'slf4j-simple', version: '1.7.25'

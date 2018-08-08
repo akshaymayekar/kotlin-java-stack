@@ -1,10 +1,12 @@
 package com.fullstack.kotlinjava.db
 
-import com.fullstack.kotlinjava.config.DbProps
+import mu.KLogging
 import org.jetbrains.exposed.sql.Database
 import org.jetbrains.exposed.sql.name
 
 class DbConfig {
+
+    companion object : KLogging()
 
     var database: Database = Database.connect(
             DbProps.url(),
@@ -15,7 +17,7 @@ class DbConfig {
     }
 
     fun showDbInfo() {
-        println("Database connected to : ${database.vendor} ${database.version}")
-        println("Database Name : ${database.name}")
+        logger.info { "Database connected to : ${database.vendor} ${database.version}" }
+        logger.info { "Database Name : ${database.name}" }
     }
 }

@@ -1,7 +1,8 @@
-package com.fullstack.kotlinjava.config
+package com.fullstack.kotlinjava.db
 
+import com.fullstack.kotlinjava.config.ResourceLoader
 import java.io.FileReader
-import java.util.Properties
+import java.util.*
 
 object DbProps {
 
